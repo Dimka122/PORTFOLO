@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.NET Разработчик | Портфолио</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+        <span class="theme-icon">🌙</span>
+    </button>
+    
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Наверх">
+        <span>⬆️</span>
+    </button>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo">.NET Developer</div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="navMenu">
+                <li><a href="#home" data-section="home">Главная</a></li>
+                <li><a href="#about" data-section="about">Обо мне</a></li>
+                <li><a href="#skills" data-section="skills">Навыки</a></li>
+                <li><a href="#projects" data-section="projects">Проекты</a></li>
+                <li><a href="#contact" data-section="contact">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="particles" id="particles"></div>
+        <div class="container">
+            <h1>Привет! Я .NET Разработчик</h1>
+            <h2 class="typing-text">
+                <span id="typingText"></span>
+                <span class="cursor">|</span>
+            </h2>
+            <p class="tech-stack">C# | ASP.NET Core | WinForms | Entity Framework | SQL Server | Azure</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn primary">Смотреть проекты</a>
+                <a href="#contact" class="btn secondary">Связаться</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Обо мне</h2>
+            <p class="subtitle">Профессиональный разработчик с опытом создания enterprise-решений</p>
+            
+            <div class="about-content">
+                <div class="avatar">💻</div>
+                <div class="info">
+                    <h3>Опытный .NET Специалист</h3>
+                    <p>
+                        Приветствую! Я профессиональный .NET разработчик с более чем 1,5-летним опытом 
+                        создания различных типов приложений: от desktop решений на WinForms до 
+                        масштабных веб-приложений на ASP.NET Core. Моя специализация включает 
+                        разработку backend систем, REST API, интеграцию с базами данных и 
+                        работу с облачными технологиями Microsoft Azure.
+                    </p>
+                    <p>
+                        Постоянно изучаю новые технологии и лучшие практики разработки, 
+                        чтобы создавать качественный, поддерживаемый и производительный код. 
+                        Моя цель - не просто написать код, а создать решение, которое решает 
+                        реальные бизнес-задачи.
+                    </p>
+                    <div class="stats">
+                        <div class="stat" data-target="1,5">
+                            <div class="number">0</div>
+                            <div class="label">Лет опыта</div>
+                        </div>
+                        <div class="stat" data-target="50">
+                            <div class="number">0</div>
+                            <div class="label">Проектов</div>
+                        </div>
+                        <div class="stat" data-target="30">
+                            <div class="number">0</div>
+                            <div class="label">Довольных клиентов</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Мои навыки</h2>
+            <p class="subtitle">Технологии и инструменты, которыми я владею</p>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="icon">🎯</div>
+                    <h3>C# / .NET</h3>
+                    <div class="level">
+                        <div class="level-bar" style="width: 95%"></div>
+                    </div>
+                    <p>
+                        Глубокое знание языка C# и платформы .NET. Работа с современными 
+                        возможностями языка, асинхронным программированием и LINQ. 
+                        Создание высокопроизводительных решений.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="icon">🌐</div>
+                    <h3>ASP.NET Core</h3>
+                    <div class="level">
+                        <div class="level-bar" style="width: 90%"></div>
+                    </div>
+                    <p>
+                        Разработка REST API и веб-приложений на ASP.NET Core. 
+                        Работа с MVC, Razor Pages, SignalR для real-time коммуникации. 
+                        Тестирование и оптимизация производительности.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="icon">🖥️</div>
+                    <h3>WinForms / WPF</h3>
+                    <div class="level">
+                        <div class="level-bar" style="width: 85%"></div>
+                    </div>
+                    <p>
+                        Создание desktop приложений с современным интерфейсом. 
+                        Интеграция с системными компонентами, работа с многопоточностью 
+                        и реализация сложного UI.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="icon">🗄️</div>
+                    <h3>Базы данных</h3>
+                    <div class="level">
+                        <div class="level-bar" style="width: 90%"></div>
+                    </div>
+                    <p>
+                        Работа с SQL Server, PostgreSQL, MongoDB. Использование 
+                        Entity Framework Core для ORM. Оптимизация SQL-запросов, 
+                        проектирование базы данных и миграции.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="icon">☁️</div>
+                    <h3>Azure & Cloud</h3>
+                    <div class="level">
+                        <div class="level-bar" style="width: 80%"></div>
+                    </div>
+                    <p>
+                        Развертывание приложений в Microsoft Azure. Работа с 
+                        App Service, Azure Functions, Cosmos DB, Service Bus. 
+                        CI/CD пайплайны и DevOps практики.
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="icon">🔧</div>
+                    <h3>Инструменты</h3>
+                    <div class="level">
+                        <div class="level-bar" style="width: 88%"></div>
+                    </div>
+                    <p>
+                        Visual Studio, VS Code, Git, Docker, Jenkins, Azure DevOps. 
+                        Unit тестирование (xUnit, NUnit), интеграционное тестирование, 
+                        кодогенерация и рефакторинг.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Мои проекты</h2>
+            <p class="subtitle">Избранные работы, которыми я горжусь</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">🍕</div>
+                    <div class="project-content">
+                        <h3>Food Delivery Admin</h3>
+                        <div class="tags">
+                            <span class="tag">Next.js 16</span>
+                            <span class="tag">React 19</span>
+                            <span class="tag">TypeScript</span>
+                        </div>
+                        <p>
+                            Современная административная панель для ресторана доставки еды. 
+                            Включает дашборд со статистикой, управление товарами и категориями, 
+                            систему отслеживания заказов с 7 статусами, аналитику продаж и 
+                            гибкие настройки ресторана. Реализована JWT аутентификация и 
+                            защищённые маршруты.
+                        </p>
+                        <a href="https://github.com/Dimka122/Food-delivery" target="_blank" class="btn">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🏨</div>
+                    <div class="project-content">
+                        <h3>HotelOnline</h3>
+                        <div class="tags">
+                            <span class="tag">C#</span>
+                            <span class="tag">.NET</span>
+                            <span class="tag">WinForms</span>
+                        </div>
+                        <p>
+                            Мини-приложение для бронирования отелей с интуитивным интерфейсом. 
+                            Реализована система поиска и фильтрации отелей, просмотр доступности 
+                            номеров, оформление бронирований и управление заказами. Приложение 
+                            демонстрирует работу с базами данных и обработку пользовательского ввода.
+                        </p>
+                        <a href="https://github.com/Dimka122/HotelOnline" target="_blank" class="btn">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🚗</div>
+                    <div class="project-content">
+                        <h3>Car List Sort</h3>
+                        <div class="tags">
+                            <span class="tag">React 18</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">CSS3</span>
+                        </div>
+                        <p>
+                            Интерактивное приложение для сортировки и фильтрации списка автомобилей. 
+                            Реализован поиск по названию, фильтрация по году выпуска, динамическая 
+                            отрисовка карточек автомобилей с изображениями. Приложение демонстрирует 
+                            работу с хуками React, управление состоянием и обработку пользовательского ввода.
+                        </p>
+                        <a href="https://github.com/Dimka122/CarListSort" target="_blank" class="btn">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🐟</div>
+                    <div class="project-content">
+                        <h3>Аквариум Симулятор</h3>
+                        <div class="tags">
+                            <span class="tag">C#</span>
+                            <span class="tag">WinForms</span>
+                            <span class="tag">GDI+</span>
+                        </div>
+                        <p>
+                            Интерактивный симулятор аквариума с множеством рыб. Реализована 
+                            объектно-ориентированная архитектура с классом Fish, естественное 
+                            поведение рыб со случайным движением, отскок от границ, 
+                            интерактивное управление через клики (добавление/перемещение рыб). 
+                            Оптимизированная отрисовка с поддержкой до 50 рыб.
+                        </p>
+                        <a href="https://github.com/Dimka122/Akvarium" target="_blank" class="btn">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🌐</div>
+                    <div class="project-content">
+                        <h3>Steko Landing</h3>
+                        <div class="tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">PHP</span>
+                        </div>
+                        <p>
+                            Современный landing page с адаптивным дизайном и формой обратной связи. 
+                            Реализована валидация форм на клиенте и сервере, отправка писем 
+                            через PHP, плавные анимации и эффекты при прокрутке. Сайт полностью 
+                            адаптивен для всех устройств и оптимизирован для SEO.
+                        </p>
+                        <a href="https://github.com/Dimka122/steko-landing" target="_blank" class="btn">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🛒</div>
+                    <div class="project-content">
+                        <h3>E-commerce Shop API</h3>
+                        <div class="tags">
+                            <span class="tag">ASP.NET Core 8</span>
+                            <span class="tag">Entity Framework</span>
+                            <span class="tag">JWT Auth</span>
+                        </div>
+                        <p>
+                            Полноценный backend API для интернет-магазина на ASP.NET Core 8. 
+                            Реализованы REST API для продуктов, корзины, заказов и отзывов, 
+                            JWT аутентификация с ролевой авторизацией, админ-панель с 
+                            аналитикой, Swagger документация, middleware для обработки 
+                            ошибок и логирования. Поддержка Docker и Unit тесты.
+                        </p>
+                        <a href="https://github.com/Dimka122/OnlineStoreShop" target="_blank" class="btn">Подробнее</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🖥️</div>
+                    <div class="project-content">
+                        <h3>Online Store Frontend</h3>
+                        <div class="tags">
+                            <span class="tag">React 19</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Material-UI</span>
+                        </div>
+                        <p>
+                            Современный фронтенд для e-commerce магазина на React 19 с TypeScript. 
+                            Реализован каталог товаров с поиском и фильтрацией, корзина покупок, 
+                            система отзывов и рейтингов, JWT аутентификация, личный кабинет 
+                            и история заказов. Адаптивный дизайн на Material-UI, защита маршрутов, 
+                            интеграция с ASP.NET Core API через Axios.
+                        </p>
+                        <a href="https://github.com/Dimka122/OnlineStoreShop/tree/main/shopAPIshop/Client/online-store-frontend" target="_blank" class="btn">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Связаться со мной</h2>
+            <p class="subtitle">Готов обсудить ваш проект или предложить свои услуги</p>
+            
+            <div class="contact-content">
+                <div class="contact-item">
+                    <div class="icon">📧</div>
+                    <h3>Email</h3>
+                    <p>dima7dimka@gmail.com</p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">📱</div>
+                    <h3>Телефон</h3>
+                    <p>+38 066 546 56 77</p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/dima-kassin-357a13352">linkedin.com/in/dima-kassin-357a13352</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon">🐙</div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/Dimka122">github.com/Dimka122</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 .NET Developer. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== Theme Toggle =====
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('.theme-icon');
+        let isDarkTheme = false;
+
+        themeToggle.addEventListener('click', () => {
+            isDarkTheme = !isDarkTheme;
+            document.body.classList.toggle('dark-theme', isDarkTheme);
+            themeIcon.textContent = isDarkTheme ? '☀️' : '🌙';
+            localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            isDarkTheme = true;
+            document.body.classList.add('dark-theme');
+            themeIcon.textContent = '☀️';
+        }
+
+        // ===== Progress Bar =====
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.getElementById('progressBar').style.width = scrollPercent + '%';
+        });
+
+        // ===== Scroll to Top Button =====
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // ===== Mobile Menu =====
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+            });
+        });
+
+        // ===== Typing Effect =====
+        const typingText = document.getElementById('typingText');
+        const phrases = [
+            'Создаю надёжные приложения',
+            'Разрабатываю REST API',
+            'Строю микросервисы',
+            'Интегрирую облачные решения'
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+
+        function typeEffect() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+                typingSpeed = 50;
+            } else {
+                typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+                typingSpeed = 100;
+            }
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                isDeleting = true;
+                typingSpeed = 2000; // Pause at end
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typingSpeed = 500; // Pause before new phrase
+            }
+
+            setTimeout(typeEffect, typingSpeed);
+        }
+
+        typeEffect();
+
+        // ===== Animated Counters =====
+        const statNumbers = document.querySelectorAll('.stat .number');
+        let counted = false;
+
+        function animateCounters() {
+            if (counted) return;
+            
+            const aboutSection = document.querySelector('.about');
+            const sectionTop = aboutSection.offsetTop;
+            const sectionHeight = aboutSection.clientHeight;
+            
+            if (window.scrollY >= sectionTop - sectionHeight / 2) {
+                counted = true;
+                
+                statNumbers.forEach((number, index) => {
+                    const target = parseInt(number.parentElement.dataset.target);
+                    const duration = 2000;
+                    const increment = target / (duration / 16);
+                    let current = 0;
+                    
+                    const counter = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            number.textContent = target + '+';
+                            clearInterval(counter);
+                        } else {
+                            number.textContent = Math.floor(current) + '+';
+                        }
+                    }, 16);
+                });
+            }
+        }
+
+        window.addEventListener('scroll', animateCounters);
+        animateCounters(); // Check on load
+
+        // ===== Navbar scroll effect =====
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ===== Smooth scrolling for navigation links =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ===== Animate skill bars on scroll =====
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.level-bar');
+                    skillBars.forEach(bar => {
+                        bar.style.width = bar.style.width;
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.skill-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // ===== Add active state to navigation on scroll =====
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // ===== Particles Animation =====
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        createParticles();
+
+        // ===== 3D Card Effect =====
+        document.querySelectorAll('.project-card, .skill-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
