@@ -787,6 +787,19 @@ section .subtitle {
     z-index: 1;
 }
 
+.contact .contact-item a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.contact .contact-item a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
 /* Footer */
 footer {
     background: var(--dark-bg);
