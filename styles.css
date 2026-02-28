@@ -357,7 +357,7 @@ nav a.active {
 }
 
 .hero .tech-stack {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 2rem;
     opacity: 0.8;
     animation: fadeInUp 1s ease 0.4s both;
