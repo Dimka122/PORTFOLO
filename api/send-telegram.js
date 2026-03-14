@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 export default async function handler(req, res) {
     // Разрешаем только POST запросы
     if (req.method !== 'POST') {
