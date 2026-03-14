@@ -400,6 +400,7 @@
             <p class="telegram-text">Есть вопросы? Напишите нам в Telegram!</p>
             <form class="telegram-chat-form" id="telegramChatForm">
                 <input type="text" name="name" placeholder="Ваше имя" required class="telegram-input">
+                <input type="text" name="contact" placeholder="Телефон или @username" required class="telegram-input">
                 <textarea name="message" placeholder="Ваше сообщение..." required class="telegram-textarea" rows="3"></textarea>
                 <button type="submit" class="telegram-send-btn">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
@@ -701,6 +702,7 @@
                         },
                         body: JSON.stringify({
                             name: formData.get('name'),
+                            contact: formData.get('contact'),
                             message: formData.get('message'),
                             source: 'Виджет на сайте'
                         })

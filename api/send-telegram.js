@@ -17,7 +17,7 @@ export default async function handler(req, res) {
 
     try {
         // Получаем данные из запроса
-        const { name, phone, email, service, message, source } = req.body;
+        const { name, contact, phone, email, service, message, source } = req.body;
 
         // Определяем тип сообщения
         const isWidgetMessage = source === 'Виджет на сайте';
@@ -31,6 +31,7 @@ export default async function handler(req, res) {
 💬 <b>Сообщение из виджета на сайте</b>
 
 👤 <b>Имя:</b> ${name || 'Не указано'}
+📞 <b>Контакт:</b> ${contact || 'Не указано'}
 📝 <b>Сообщение:</b> ${message || 'Нет сообщения'}
 
 📅 <b>Дата:</b> ${new Date().toLocaleString('ru-RU')}
