@@ -27,7 +27,7 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="container">
-            <div class="logo">.NET Developer</div>
+            <div class="logo">Full-Stack .NET Developer</div>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню">
                 <span></span>
                 <span></span>
@@ -47,7 +47,7 @@
     <section id="home" class="hero">
         <div class="particles" id="particles"></div>
         <div class="container">
-            <h1>Привет! Я Full-Stack .NET Разработчик</h1>
+            <h1>Привет! Я Full Stack .NET Разработчик</h1>
             <h2 class="typing-text">
                 <span id="typingText"></span>
                 <span class="cursor">|</span>
@@ -381,6 +381,37 @@
         </div>
     </footer>
 
+    <!-- Telegram виджет -->
+    <div class="telegram-widget">
+        <button class="telegram-toggle" id="telegramToggle" aria-label="Telegram">
+            <svg class="telegram-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+            </svg>
+        </button>
+        <div class="telegram-popup" id="telegramPopup">
+            <button class="telegram-close" id="telegramClose" aria-label="Закрыть">×</button>
+            <div class="telegram-header">
+                <div class="telegram-avatar">📱</div>
+                <div class="telegram-info">
+                    <h4>Telegram</h4>
+                    <span>Обычно отвечаем за 5 минут</span>
+                </div>
+            </div>
+            <p class="telegram-text">Есть вопросы? Напишите нам в Telegram!</p>
+            <form class="telegram-chat-form" id="telegramChatForm">
+                <input type="text" name="name" placeholder="Ваше имя" required class="telegram-input">
+                <textarea name="message" placeholder="Ваше сообщение..." required class="telegram-textarea" rows="3"></textarea>
+                <button type="submit" class="telegram-send-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                    Отправить
+                </button>
+                <p class="telegram-form-message" id="telegramFormMessage"></p>
+            </form>
+        </div>
+    </div>
+
     <script>
         // ===== Theme Toggle =====
         const themeToggle = document.getElementById('themeToggle');
@@ -625,6 +656,82 @@
                 card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
             });
         });
+
+        // ===== Telegram Widget =====
+        const telegramToggle = document.getElementById('telegramToggle');
+        const telegramPopup = document.getElementById('telegramPopup');
+        const telegramClose = document.getElementById('telegramClose');
+
+        telegramToggle.addEventListener('click', () => {
+            telegramPopup.classList.toggle('active');
+        });
+
+        telegramClose.addEventListener('click', () => {
+            telegramPopup.classList.remove('active');
+        });
+
+        // Закрыть при клике вне виджета
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.telegram-widget')) {
+                telegramPopup.classList.remove('active');
+            }
+        });
+
+        // ===== Telegram Chat Form =====
+        const telegramChatForm = document.getElementById('telegramChatForm');
+        const telegramFormMessage = document.getElementById('telegramFormMessage');
+
+        if (telegramChatForm) {
+            telegramChatForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const formData = new FormData(telegramChatForm);
+                const submitBtn = telegramChatForm.querySelector('.telegram-send-btn');
+                const originalBtnText = submitBtn.innerHTML;
+
+                // Блокируем кнопку
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Отправка...';
+
+                try {
+                    const response = await fetch('/api/send-telegram', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            name: formData.get('name'),
+                            message: formData.get('message'),
+                            source: 'Виджет на сайте'
+                        })
+                    });
+
+                    const result = await response.json();
+
+                    if (result.status === 'success') {
+                        telegramFormMessage.textContent = '✓ Сообщение отправлено!';
+                        telegramFormMessage.classList.remove('error');
+                        telegramFormMessage.classList.add('success');
+                        telegramChatForm.reset();
+                    } else {
+                        throw new Error(result.message);
+                    }
+                } catch (error) {
+                    telegramFormMessage.textContent = '✗ Ошибка отправки. Попробуйте позже.';
+                    telegramFormMessage.classList.remove('success');
+                    telegramFormMessage.classList.add('error');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+
+                    // Скрываем сообщение через 5 секунд
+                    setTimeout(() => {
+                        telegramFormMessage.textContent = '';
+                        telegramFormMessage.classList.remove('success', 'error');
+                    }, 5000);
+                }
+            });
+        }
     </script>
 </body>
 </html>
